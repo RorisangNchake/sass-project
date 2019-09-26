@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
+$primary-color: rgb(255, 187, 0);
+$secondary-color: rgb(230, 230, 230);
+$button-color: black;
+$button-fill: white;
+
 body, html {
 	margin: 0;
 }
@@ -7,7 +12,7 @@ body, html {
 body {
 	height: 100%;
 	font-family: Montserrat;
-	//display: none;
+	display: none;
 }
 
 header {
@@ -66,7 +71,110 @@ header {
 			background-size: 12px;
 			background-position: 0 2px;
 			padding-left: 1em
-
 		}
+
+		.primary {
+			padding: 1.2em;
+			padding-left: calc(3em + 25px);
+			background-position: 3em;
+			border: 1px solid grey;
+			display: inline-block;
+			margin-left: -3em;
+		}
+	}
+
+	.main {
+		padding-top: 5em;
+		background: url(./assets/philipp-kammerer-6Mxb_mZ_Q8E-unsplash.jpg);
+		background-size: cover;
+
+		p{
+			width: 70%;
+			color: white;
+			margin-bottom: 1.5em; 
+		}
+
+	}
+
+	.featured, .contact {
+		line-height: 1.4em;
+		font-size: 0.9em
+	}
+
+	.featured {
+		background: $primary-color;
+
+		.button {
+			margin-top: 2em;
+			display: block;
+			background-position-y: 0.4em;
+		}
+	}
+
+	.contact {
+		background: $secondary-color;
+		input {
+			width: calc(100% - 2em);
+			font-family: Montserrat;
+			padding: 1em;
+			margin-bottom: 2em;
+		}
+
+		button {
+			width: 100%;
+			padding: 1em;
+			border: none;
+			font-family: montserrat;
+			background: $button-color;
+			color: $button-fill;
+			cursor: pointer;
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+@media only screen and (min-width: 900px) {
+	html {
+		font-size: 18px;
+	}
+
+	header {
+		background: none;
+	}
+
+	h1 {
+		font-size: 2.4em;
+	}
+
+	.container {
+		grid-template-columns: 70% auto;
+		grid-template-rows: 67% auto;
+		grid-template-areas:
+			"main featured"
+			"main contact";
+		height: 110vh;
+	}
+	.main {
+		grid-area: main;
+	}
+	.featured {
+		grid-area: featured;
+		h2 {
+			margin-top: 2em;
+		}
+	}
+	.contact {
+		grid-area: contact;
+	}
+	
+	section {
+		display: grid;
+		grid-template-rows: auto;
+		align-items: center;
 	}
 }
