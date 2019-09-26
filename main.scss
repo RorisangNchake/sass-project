@@ -9,3 +9,64 @@ body {
 	font-family: Montserrat;
 	//display: none;
 }
+
+header {
+	position: absolute;
+	padding: 1em;
+	z-index: 20;
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - 2em);
+	background: white;
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
+
+	a.logo {
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	ul {
+		list-style-type: none;
+		display: flex;
+		justify-content: space-around;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	li a {
+		padding: 1em;
+	}
+}
+
+.container {
+	display: grid;
+	grid-template-columns: auto;
+
+	section {
+		padding: 2em;
+
+		h1, h2, .button {
+			text-transform: uppercase;
+		}
+
+		h2 {
+			font-size: 1.3em;
+		}
+
+		.button {
+			text-decoration: none;
+			color: black;
+			font-weight: bold;
+			background: url(./assets/arrow-point-to-right.svg) no-repeat;
+			background-size: 12px;
+			background-position: 0 2px;
+			padding-left: 1em
+
+		}
+	}
+}
